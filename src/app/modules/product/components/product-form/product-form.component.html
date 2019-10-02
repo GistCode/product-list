@@ -1,0 +1,41 @@
+<form [formGroup]="productForm" class="product-form">
+  <mat-form-field appearance="outline" class="product-input">
+    <mat-label>Product Title</mat-label>
+    <input
+      formControlName="title"
+      matInput
+      placeholder="Product Title"
+      required
+    />
+    <mat-error *ngIf="productForm.controls['title'].invalid"
+      >Needs at least 10 characters</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="product-input">
+    <mat-label>SKU #</mat-label>
+    <input formControlName="sku" matInput placeholder="SKU #" required />
+    <mat-error *ngIf="productForm.controls['sku'].invalid"
+      >Required</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="product-input">
+    <mat-label>Description</mat-label>
+    <textarea
+      formControlName="description"
+      matInput
+      placeholder="Description"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="product-input">
+    <mat-label>Category</mat-label>
+    <mat-select placeholder="Select" formControlName="category" multiple>
+      <mat-option value="fruit">Fruit</mat-option>
+      <mat-option value="vegetable">Vegetable</mat-option>
+      <mat-option value="red">Red</mat-option>
+      <mat-option value="yellow">Yellow</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
