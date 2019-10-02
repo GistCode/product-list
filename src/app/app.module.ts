@@ -22,7 +22,7 @@ import { InMemProductService } from 'mocks/in-memory-db.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    !environment.production ? HttpClientInMemoryWebApiModule.forRoot(InMemProductService, { delay: 100 }) : []
+    HttpClientInMemoryWebApiModule.forRoot(InMemProductService, { delay: 100 })
   ],
   providers: [],
   bootstrap: [AppComponent]
